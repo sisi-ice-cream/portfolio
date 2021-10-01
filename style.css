@@ -1,101 +1,13 @@
-body {font-family: Arial, Helvetica, sans-serif;}
-
-header {height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    padding: 2rem;
-}
-
-h1 {
-    margin-bottom: 2rem;
-    font-size: 5vw;
-    font-weight: bold;
-    line-height: 1.4em;
-}
-
-h2 {
-    margin-bottom: 4rem;
-    text-align: center;
-    font-size: 3vw;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-span {color: var(--primary)}
-
-.about {
-    padding: 4rem;
-    color: white;
-    background-color: var(--primary);
-}
-.about-container {
-    max-width: 960px;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-}
-img{
-width: 30vw;
-}
-p {
-    margin-bottom: 1em;
-    line-height: 1.4em;
-    padding: 4rem;
-}
-
-.about-img {
-    display: block;
-    width: 100%;
-    max-width: 350px;
-    margin: 0 auto var(--spacing);
-    filter: grayscale(100%);
-}
-.about-img:hover {
-    filter: grayscale(0);
-}
-
-.button {margin-right: 1rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border: 2px solid var(--button-color);
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--button-color);
-}
-.button:hover {
-    color: var(--button-hover-color);
-    background-color: var(--button-color);
-}
-
-
-p {
-    margin-bottom: 1em;
-    line-height: 1.4em;
-}
-
-media {min-width: 800px} 
- .about-container {
-        display: flex;
-    }
-
-    .about-text {
-        margin-left: var(--spacing);
-    }
-
-
-
 :root {
     --primary: red;
+    --spacing: 4rem;
+    --dk-grey: #333;
+    --max-width: 960px;
+    --img-width: 350px;
+
 }
 
-.button { padding: 1rem;
-    border: 2px solid red;
-    font-weight: bold;
-    text-decoration: none;
-    color: red;
-}
-
+body {font-family: Arial, Helvetica, sans-serif;}
 
 .neutral-theme {
     background-color: white;
@@ -109,4 +21,233 @@ media {min-width: 800px}
     background-color: var(--primary);
     --button-color: white;
     --button-hover-color: var(--primary);
+}
+
+header {height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 2rem;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: clamp(3rem, 5vw, 200rem);
+    font-weight: bold;
+    line-height: 1.4em;
+    text-align: center;
+    
+}
+
+.about {
+    padding: var(--spacing);
+    color: white;
+    background-color: var(--primary);
+}
+.about {
+    position: relative;
+    margin-bottom: 100px;
+}
+.about::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -100px;
+    width: 0;
+    height: 0;
+    border-top: 100px solid var(--primary);
+    border-right: 100vw solid transparent;
+}
+
+.button {margin-right: 1rem;
+    display: inline-block;
+    width: max-content;
+    padding: 1rem;
+    border: 2px solid var(--button-color);
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--button-color);
+
+}
+
+.button:hover {
+    color: var(--button-hover-color);
+    background-color: var(--button-color);
+    transition: all 0.3s ease-in-out;
+}
+
+h2 {
+    margin-bottom: var(--spacing);
+    text-align: center;
+    font-size: clamp(3rem, 5vw, 200rem);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+span {color: var(--primary)}
+
+.about-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.about-img {
+    max-width: 350px;
+}
+
+img{
+width: 30vw;
+}
+
+p {
+    margin-bottom: 1em;
+    line-height: 1.4em;
+}
+
+blockquote {
+    margin-top: var(--spacing); 
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+}
+
+cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-style: normal;
+}   
+
+section {
+    padding: var(--spacing);
+}
+
+h3 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+article {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.article-img {
+    margin-bottom: 2rem;
+}
+
+.contact {
+    position: relative;
+    margin-top: 100px;
+    text-align: center;
+}
+.contact::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -100px;
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid var(--primary);
+    border-left: 100vw solid transparent;
+}
+
+footer {
+    padding: var(--spacing);
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--spacing);
+}
+
+.social-item {
+    margin: 0 2rem;
+}
+
+.social-link {
+    display: block;
+    width: 60px;
+    height: 60px;
+    font-size: 0px;
+    background: no-repeat;
+    background-size: 60px;
+}
+
+.linkedin {
+background-image: url(assets/images/linkedin.svg);
+}
+.twitter {
+background-image: url(assets/images/twitter.svg);
+}
+.github {
+background-image: url(assets/images/github.svg);
+}
+.youtube {
+background-image: url(assets/images/youtube.svg);
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.header-link::after {
+    content: '';
+    width: 0;
+    height: 0;
+    margin-left: 1rem;
+    border-left: .5rem solid transparent;
+    border-right: .5rem solid transparent;
+    border-top: .75rem solid var(--primary);
+}
+
+.header-link:hover::after {
+    border-top-color: white;
+    transition: all 0.3s ease-in-out;
+}
+.header-link {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+
+@media (min-width: 800px) {
+    .about-container {
+        display: flex;
+    }
+
+    .about-text {
+        margin-left: var(--spacing);
+    }
+
+    .about-img {
+        display: block;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto var(--spacing);
+        filter: grayscale(100%);
+    }
+    
+    .about-img:hover {
+    filter: grayscale(0);
+    }
+
+    article {
+        flex-direction: row;
+        max-width: 960px;
+        margin: 0 auto var(--spacing);
+    }
+
+    .article-img {
+    margin-left: 2rem;
+    max-width: 350px;
+    object-fit: cover;
+    }
 }
